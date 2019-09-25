@@ -1,0 +1,14 @@
+- slug: pentest
+  name: Pentest
+
+- slug: tools
+  name: Tools
+
+- slug: android
+  name: Android
+
+- slug: ios
+  name: IOS
+
+- slug: iot
+  name: IOT
