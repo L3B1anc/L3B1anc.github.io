@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "漏洞提权与利用"
-subtitle: "大熊の笔记"
+title:  "域控服务器渗透思路"
+subtitle: "漏洞提权与利用"
 date:   2019-09-25 21:36
 categories: [pentest]
 ---
