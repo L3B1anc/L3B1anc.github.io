@@ -57,25 +57,23 @@ categories: [pentest]
 
 1. 获取IP地址配置信息
 
-   > ipconfig /all 查看是否存在域控服务器
+   ```ipconfig /all 查看是否存在域控服务器```
 
 2. 查看域控情况
 
-   > net view  查看显示当前域的计算机列表
+    ```net view  查看显示当前域的计算机列表```
 
 3. 登录域控服务器
 
-   > 用工具爆破密码、
+   ```内网扫描，登入域控服务器权限```
 
 4. 获取域控服务器用户密码
-
-   > 获取system权限
-   >
-   > gescdump -s > all.txt 把用户密码hash值全部下载，整理一下
+   获取system权限
+   gescdump -s > all.txt 把用户密码hash值全部下载，整理一下
 
 5. 破解域控用户密码
 
-   > 彩虹表/工具破解hash值
+   彩虹表/工具破解hash值
 
 
 
