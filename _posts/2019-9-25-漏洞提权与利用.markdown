@@ -6,68 +6,76 @@ date:   2019-09-25 21:36
 categories: [pentest]
 ---
 
-# 大熊の笔记 -- 漏洞提权与利用
+# 漏洞提权与利用--域控服务器渗透思路
 
-## 1. 提权基础
-
-## 2. windows漏洞利用与提权
-
-人间惨剧，我的笔记全没了，有空再补吧
-
----
-
-### 2.6 域控服务器密码获取
+###  域控服务器密码获取
 
 > 获取了域控服务器的权限，就意味着掌控了整个网络的资源和权限
 
-#### 2.6.1 域控服务器渗透思路
+#### 域控服务器渗透思路
 
-* 寻找网络入口，获取域控用户权限
-* 获取域控服务器内某一台web服务器或其他服务器权限
+- 寻找网络入口，获取域控用户权限
+- 获取域控服务器内某一台web服务器或其他服务器权限
 
-#### 2.6.2 内网域控服务器渗透常用命令
+#### 内网域控服务器渗透常用命令
 
 1. 本机信息收集命令
 
-* 用户列表：分析windows用户列表，分析邮件用户，内网/域邮件哟用户通常就是内网/域用户
-* 进程列表：分析杀毒软件/安全监控工具、邮件客户端、vpn等
-* 服务列表：与安全防范工具有关的服务，存在问题的服务
-* 端口列表：开放端口对应的常见服务/应用程序
-* 补丁列表：windows补丁、第三方软件的漏洞
-* 本机共享：本机共享列表/访问权限，本机访问的域共享/访问权限
-* 本地用户习惯分析
+- 用户列表：分析windows用户列表，分析邮件用户，内网/域邮件哟用户通常就是内网/域用户
+- 进程列表：分析杀毒软件/安全监控工具、邮件客户端、vpn等
+- 服务列表：与安全防范工具有关的服务，存在问题的服务
+- 端口列表：开放端口对应的常见服务/应用程序
+- 补丁列表：windows补丁、第三方软件的漏洞
+- 本机共享：本机共享列表/访问权限，本机访问的域共享/访问权限
+- 本地用户习惯分析
 
 2. 常见信息收集命令
 
-* 查询本机用户列表：net user
+- 查询本机用户列表：net user
+- 查询本机管理员：net localhroup administrators
+- 查询域管理员用户：net group "domain admins" /domain
+- 查询域用户：net user /domain
+- 查询域里面的工作组：net gtoup /domain
+- 查询域名称：net view /domain
+- 查询域内计算机：net view /domain :XX
+- 查询域控制器：net time /domain
+- 查询域管理员用户组：net localgroup administrators /domain
+- 将域用户添加到本机：net localgroup administrators workgroup\user001 /add
+- 查看域控制器：net group "Domain controllers"
+- 查询本机IP段：ipconfig /all
+- 查询同一域内的机器列表：net view
+- 查询所有域控制器：dsquery server
+- 查询域内计算机：dsgquery computer
+- 查询域内联系人：dsquery contact
+- 查询域内子网：dsquery subnet
+- 查询域内组用户：dsquery group
+- 查询域内组织单位：dsquery ou
+- 查询域内站点：dsquery site
+- 查询域内所有计算机：net group "domain computers" /domain
 
-* 查询本机管理员：net localhroup administrators
+#### 域控服务器用户账号和密码获取实例
 
-* 查询域管理员用户：net group "domain admins" /domain
+1. 获取IP地址配置信息
 
-* 查询域用户：net user /domain
+   > ipconfig /all 查看是否存在域控服务器
 
-* 查询域里面的工作组：net gtoup /domain
+2. 查看域控情况
 
-* 查询域名称：net view /domain
+   > net view  查看显示当前域的计算机列表
 
-* 查询域内计算机：net view /domain :XX
+3. 登录域控服务器
 
-* 查询域控制器：net time /domain
+   > 用工具爆破密码、
 
-* 查询域管理员用户组：net localgroup administrators /domain
+4. 获取域控服务器用户密码
 
-* 将域用户添加到本机：net localgroup administrators workgroup\user001 /add
+   > 获取system权限
+   >
+   > gescdump -s > all.txt 把用户密码hash值全部下载，整理一下
 
-* 查看域控制器：net group "Domain controllers"
+5. 破解域控用户密码
 
-* 查询本机IP段：ipconfig /all
+   > 彩虹表/工具破解hash值
 
-* 查询同一域内的机器列表：net view
 
-* 查询所有域控制器：dsquery server
-
-  ---
-
-  睡觉了，有缘再看
 
