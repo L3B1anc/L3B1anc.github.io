@@ -74,4 +74,5 @@ for i in bs:
 
 所以获得的明文密码就是SuperSecret
 
-![1571126911410](OWASP MSTG-Hacking-Playground.assets/1571126911410.png)
+![1571126911410](https://github.com/L3B1anc/L3B1anc.github.io/blob/master/_posts/OWASP%20MSTG-Hacking-Playground.assets/1571126911410.png?raw=true)
+
