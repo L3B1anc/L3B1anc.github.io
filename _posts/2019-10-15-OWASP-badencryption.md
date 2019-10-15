@@ -18,11 +18,11 @@ writeup
 
 ## 1 Bad encryption
 
-![1571107288144](OWASP MSTG-Hacking-Playground.assets/1571107288144.png)
+![1571107288144](https://raw.githubusercontent.com/L3B1anc/L3B1anc.github.io/master/_posts/OWASP MSTG-Hacking-Playground.assets/1571107288144.png) 
 
 需要看代码，找到第一关的代码
 
-![1571107705964](OWASP MSTG-Hacking-Playground.assets/1571107705964.png)
+![1571107705964](https://raw.githubusercontent.com/L3B1anc/L3B1anc.github.io/master/_posts/OWASP MSTG-Hacking-Playground.assets/1571107705964.png) 
 
 看见有个判断处，将用户输入的密码加密后与vJqfip28ioydips=做判断
 
