@@ -3,7 +3,7 @@ layout: post
 title:  badencryption
 subtitle: "attack me if u can"
 date:   2019-10-15 16:20
-categories: [pentest,Android]
+categories: [android]
 ---
 
 # Attack me if u can
@@ -75,4 +75,3 @@ for i in bs:
 所以获得的明文密码就是SuperSecret
 
 ![1571126911410](https://github.com/L3B1anc/L3B1anc.github.io/blob/master/_posts/OWASP%20MSTG-Hacking-Playground.assets/1571126911410.png?raw=true)
-
