@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "历史whois查询"
+subtitle: "信息收集"
+date:   2019-09-25 21:36
+categories: [pentest]
+---
+
+# 历史whois查询
+
+历史快照查询网站
+
+``` https://archive.org/ ```
+
+那么，可以通过查询whois查询页面的历史快照，来找到网站在做隐私保护之前的注册信息
+
+``` https://web.archive.org/web/\*/https://who.is/whois/example.com ```
+
