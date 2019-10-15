@@ -3,7 +3,7 @@ layout: post
 title:  badencryption
 subtitle: "attack me if u can"
 date:   2019-10-15 16:20
-categories: [Android,pentest]
+categories: [Android]
 ---
 
 # Attack me if u can
