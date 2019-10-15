@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  badencryption"
+title:  badencryption
 subtitle: "attack me if u can"
 date:   2019-10-15 16:20
 categories: [pentest,android]
