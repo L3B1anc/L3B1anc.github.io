@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  badencryption
+title:  0x01 Badencryption
 subtitle: "attack me if u can"
 date:   2019-10-15 16:20
 categories: [Android]
