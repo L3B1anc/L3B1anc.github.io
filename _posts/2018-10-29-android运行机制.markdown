@@ -1,0 +1,99 @@
+---
+layout: post
+title:  "android运行机制"
+subtitle: "android客户端测试"
+date:   2018-10-29 21:36
+categories: [Android]
+---
+
+# 安卓运行机制
+
+按照我的理解以及查到的资料，android四层：Linux内核层，系统运行库层，应用框架层，应用层
+
+## Linux内核
+
+Android运行在一个Linux内核上，这一层主要是一些驱动等等。
+
+## 系统运行库层
+
+>这一层通过一些C/C++库来为Android系统提供了主要的特性支持。如SQLite库提供了数据库的支持，OpenGL|ES库提供了3D绘图的支持，Webkit库提供了浏览器内核的支持等。
+>同样在这一层还有Android运行时库，它主要提供了一些核心库，能够允许开发者使用Java语言来编写Android应用。另外Android运行时库中还包含了Dalvik虚拟机，它使得每一个Android应用都能运行在独立的进程当中，并且拥有一个自己的Dalvik虚拟机实例。相较于Java虚拟机，Dalvik是专门为移动设备定制的，它针对手机内存、CPU性能有限等情况做了优化处理。
+
+常说的Dalvik就是在这一层
+
+### Dalvik虚拟机
+
+> Dalvik是Google公司自己设计用于Android平台的虚拟机。Dalvik虚拟机是Google等厂商合作开发的Android移动设备平台的核心组成部分之一。它可以支持已转换为 .dex（即Dalvik Executable）格式的Java应用程序的运行，.dex格式是专为Dalvik设计的一种压缩格式，适合内存和处理器速度有限的系统。Dalvik 经过优化，允许在有限的内存中同时运行多个虚拟机的实例，并且 每一个Dalvik 应用作为一个独立的Linux 进程执行。独立的进程可以防止在虚拟机崩溃的时候所有程序都被关闭。
+
+### JVM
+
+>Java语言的一个非常重要的特点就是与平台的无关性。而使用Java虚拟机是实现这一特点的关键。一般的高级语言如果要在不同的平台上运行，至少需要编译成不同的目标代码。而引入Java语言虚拟机后，Java语言在不同平台上运行时不需要重新编译。Java语言使用Java虚拟机屏蔽了与具体平台相关的信息，使得Java语言编译程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行。Java虚拟机在执行字节码时，把字节码解释成具体平台上的机器指令执行。这就是Java的能够“一次编译，到处运行”的原因。
+
+Dalvik是JVM的一种，java代码要允许，需要在java虚拟机（JVM）上运行，而Dalvik就是一种特殊的虚拟机，来保证apk文件在其上的正确运行。
+
+## 应用框架层
+
+存在android中的一些框架，提供一些api。
+
+##  应用层
+
+就是普通的app。
+
+那么根据以上，我可以这样理解，Android就是在linux上利用Dalvik虚拟机来运行app，然后通过各种app的运行来为用户提供服务。
+
+---
+
+PS：我有个问题，常说的native是存在上面的哪一层。。。
+
+----
+
+# APK运行机制
+
+## 本质
+
+app的本质是java代码
+
+要编译成一个apk的流程是：
+
+1. 写一个java文件
+2. 将java文件编译成一个.class文件
+3. 把.class文件转化成dex文件（dex文件在dalvik虚拟机上运行）
+4. 把dex文件打包成一个apk文件
+5. 签名
+6. 对签名后的.apk文件进行对齐处理（说实话这一步我不是很理解，不过应该不重要）
+
+## 运行过程
+
+ apk本质是一个zip压缩包，然后解压完成后就能在其中找到dex文件，通过`ClassLoader`将.dex文件加载到虚拟机中。
+
+> classLoader是一种类加载工具。
+
+## 文件格式
+
+一个apk的文件结构如下：
+
+###  AndroidManifest.xml
+
+全局配置文件，里面存放了balabala一大堆的东西，主要包括如下： 
+
+> AndroidManifest.xml 是每个android程序中必须的文件。它位于整个项目的根目录，描述了package中暴露的组件（activities, services, 等等），他们各自的实现类，各种能被处理的数据和启动位置。 除了能声明程序中的Activities, ContentProviders, Services, 和Intent Receivers,还能指定permissions和instrumentation（安全控制和测试）
+
+### res
+
+存放资源文件的目录。
+
+### meta-inf
+
+> 相当于一个信息包，目录中的文件和目录获得Java 2平台的认可与解释，用来配置应用程序、扩展程序、类加载器和服务manifest.mf文件，在用jar打包时自动生成。
+
+### classes.dex文件
+
+>  classes.dex是java源码编译后生成的java字节码文件。但由于Android使用的dalvik虚拟机与标准的java虚拟机是不兼容的，dex文件与class文件相比，不论是文件结构还是opcode都不一样。目前常见的java反编译工具都不能处理dex文件。
+
+### resources.arsc
+
+> 编译后的二进制资源文件。通常本地化、汉化资源存储在该文件文件中。
+
+---
+
+所以一个app运行的时候，读取AndroidManifest.xml，找到里面的主页面，调用onCreate（）方法，从主页面的代码开始运行。

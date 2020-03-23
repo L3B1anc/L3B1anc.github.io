@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "信息收集list"
+subtitle: "web渗透"
+date:   2019-04-09 21:36
+categories: [pentest]
+---
+
+# list
+枚举域名
+枚举子域
+解析子域
+测试CORS
+测试子域名接管
+扫描开放端口
+列出Web应用程序
+在非HTTP端口上进行网络测试
+截取视觉识别截图
+在Web应用程序列表上运行Web应用程序扫描程序
+运行CMS扫描仪
+做文件和目录暴力
+枚举JS文件
+从JS文件中获取秘密和新端点
+根据已识别的服务和库版本查找已知漏洞
+参数强制执行
+Github侦察
+测试AWS错误配置
+谷歌dorking
