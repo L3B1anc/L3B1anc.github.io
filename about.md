@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-subtitle: 一条菜鸟而已
+subtitle: 菜鸟想找工作
 permalink: /about/
 ---
 
