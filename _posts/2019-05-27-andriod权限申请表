@@ -5,6 +5,7 @@ subtitle: "android客户端测试"
 date:   2019-05-27 23：27
 categories: [Android]
 ---
+
 ACCESS_CHECKIN_PROPERTIES
 
 允许在登入数据库的时候读写其中的属性表，并上传改变的值
