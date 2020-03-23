@@ -19,7 +19,6 @@ Android运行在一个Linux内核上，这一层主要是一些驱动等等。
 >这一层通过一些C/C++库来为Android系统提供了主要的特性支持。如SQLite库提供了数据库的支持，OpenGL|ES库提供了3D绘图的支持，Webkit库提供了浏览器内核的支持等。
 >同样在这一层还有Android运行时库，它主要提供了一些核心库，能够允许开发者使用Java语言来编写Android应用。另外Android运行时库中还包含了Dalvik虚拟机，它使得每一个Android应用都能运行在独立的进程当中，并且拥有一个自己的Dalvik虚拟机实例。相较于Java虚拟机，Dalvik是专门为移动设备定制的，它针对手机内存、CPU性能有限等情况做了优化处理。
 
-常说的Dalvik就是在这一层
 
 ### Dalvik虚拟机
 
@@ -41,11 +40,6 @@ Dalvik是JVM的一种，java代码要允许，需要在java虚拟机（JVM）上
 
 那么根据以上，我可以这样理解，Android就是在linux上利用Dalvik虚拟机来运行app，然后通过各种app的运行来为用户提供服务。
 
----
-
-PS：我有个问题，常说的native是存在上面的哪一层。。。
-
-----
 
 # APK运行机制
 
