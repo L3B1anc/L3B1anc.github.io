@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About
-subtitle: 一条菜鸟而已
+title: 跪求大佬带带我
+subtitle: 菜鸟想找工作
 permalink: /about/
 ---
 
