@@ -138,7 +138,7 @@ menu_icons:
   about: user
   categories: th
   schedule: calendar
-  categories: categories
+  tags: categories
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
