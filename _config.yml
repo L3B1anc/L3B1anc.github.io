@@ -79,7 +79,7 @@ plugins:
 favicon: /assets/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Jekyll, NexT"
+# keywords: "Jekyll, NexT"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -122,7 +122,6 @@ menu:
   #about: /about/
   archives: /archives/
   tags: /tags/
-  android: /android/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
