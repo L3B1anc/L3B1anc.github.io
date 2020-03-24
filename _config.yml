@@ -24,3 +24,5 @@ exclude: ["README.md", "README.html"]
 # Build settings
 highlighter: null
 markdown: kramdown
+
+theme: jekyll-theme-slate
