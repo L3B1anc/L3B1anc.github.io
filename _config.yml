@@ -93,7 +93,7 @@ rss: false
 authoricon: heart
 
 # Footer `powered-by` and `theme-info` copyright
-copyright: true
+copyright: false
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -138,7 +138,7 @@ menu_icons:
   about: user
   categories: th
   schedule: calendar
-  categories: tags
+  categories: categories
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
