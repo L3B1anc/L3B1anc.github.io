@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "0x01 联合查询注入"
+title:  "联合查询注入"
 subtitle: "sqli-labs"
 date:   2020-03-24 16：43
 categories: [pentest]
