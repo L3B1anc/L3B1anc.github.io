@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "0x00 mysql基础知识"
+subtitle: "sqli-labs"
+date:   2019-03-24 17:11
+categories: [pentest]
+---
+
+# msyql基础知识
+
+information_schema数据库是在mysql的版本5.0之后产生的
+
+> information_schema数据库中重要的表
+> SCHEMATA表
+> ---SCHEMATA表提供了当前mysql实例中所有数据库的信息。是show databases的结果取之此表。
+> TABLES表
+> ---TABLES表提供了关于数据库中的表的信息（包括视图）。详细表述了某个表属于哪个schema，表类型，表引擎，创建时间，等等信息。是show tables from schemaname的结果取之此表。
+> COLUMNS表
+> ---COLUMNS表提供了表中的列信息。详细表述了某张表的所有列以及每个列的信息。是show columns from schemaname.tablename的结果取之此表。
+> STATISTICS表
+> ---STATISTICS表提供了关于表索引的信息。是show index from schemaname.tablename的结果取之此表。
+> USER_PRIVILEGES表
+> ---USER_PRIVILEGES（用户权限）表给出了关于全程权限的信息。该信息源自mysql.user授权表。是非标准表。
+> SCHEMA_PRIVILEGES表
+> ---SCHEMA_PRIVILEGES（方案权限）表给出了关于方案（数据库）权限的信息。该信息来自mysql.db授权表。是非标准表。
+> TABLE_PRIVILEGES表
+> ---TABLE_PRIVILEGES（表权限）表给出了关于表权限的信息。该信息源自mysql.tables_priv授权表。是非标准表。
+> COLUMN_PRIVILEGES表
+> ---COLUMN_PRIVILEGES（列权限）表给出了关于列权限的信息。该信息源自mysql.columns_priv授权表。是非标准表。
+> CHARACTER_SETS表
+> ---CHARACTER_SETS（字符集）表提供了mysql实例可用字符集的信息。是SHOW CHARACTER SET结果集取之此表。
+> COLLATIONS表
+> ---COLLATIONS表提供了关于各字符集的对照信息。
+> COLLATION_CHARACTER_SET_APPLICABILITY表
+> ---COLLATION_CHARACTER_SET_APPLICABILITY表指明了可用于校对的字符集。这些列等效于SHOW COLLATION的前两个显示字段。
+> TABLE_CONSTRAINTS表
+> ---TABLE_CONSTRAINTS表描述了存在约束的表。以及表的约束类型。
+> KEY_COLUMN_USAGE表
+> ---KEY_COLUMN_USAGE表描述了具有约束的键列。
+> ROUTINES表
+> ---ROUTINES表提供了关于存储子程序（存储程序和函数）的信息。此时，ROUTINES表不包含自定义函数（UDF）。名为“mysql.proc name”的列指明了对应于INFORMATION_SCHEMA.ROUTINES表的mysql.proc表列。
+> VIEWS表
+> ---VIEWS表给出了关于数据库中的视图的信息。需要有show views权限，否则无法查看视图信息。
+> TRIGGERS表
+> ---TRIGGERS表提供了关于触发程序的信息。必须有super权限才能查看该表
+
+mysql注入常用函数
+
+1. version() --mysql 版本
+2. user() --数据库用户名
+3. database() --数据库名
+4. @@datadir --数据库路径
+5. @@version_compile_os --操作系统版本
+6. into outfile 向外写文件
+7. load_file() --读文件
+8. concat(str1,str2,...) --没有分隔符地连接字符串
+9. cancat_ws(separator,str1,str2,...) --含有分隔符地连接字符串
+10. group_concat(str1,str2,...) --连接一个组的所有字符串，并以逗号分隔每一条数据
