@@ -121,7 +121,7 @@ menu:
   #categories: /categories/
   #about: /about/
   archives: /archives/
-  tags: /tags/
+  categories: /categories/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -138,7 +138,7 @@ menu_icons:
   about: user
   categories: th
   schedule: calendar
-  tags: tags
+  categories: tags
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
@@ -309,14 +309,14 @@ auto_excerpt:
 
 # Post meta display settings
 post_meta:
-  item_text: true
+  item_text: false
   created_at: true
   updated_at: true
   categories: true
 
 # Post wordcount display settings
 post_wordcount:
-  item_text: true
+  item_text: false
   wordcount: true
   min2read: true
   separated_meta: true
