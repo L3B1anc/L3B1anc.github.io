@@ -5,6 +5,7 @@ date:   2020-03-24 16：43
 categories: [pentest]
 tags: sqli-labs
 ---
+sqli-labs less1-4
 <!-- more -->
 mysql注入语句
 
