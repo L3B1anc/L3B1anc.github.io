@@ -3,7 +3,7 @@ layout: post
 title:  "历史whois查询"
 date:   2019-10-15 10：22
 categories: [pentest]
-tags: web渗透测试
+tags: web渗透
 ---
 <!-- more -->
 # 历史whois查询
