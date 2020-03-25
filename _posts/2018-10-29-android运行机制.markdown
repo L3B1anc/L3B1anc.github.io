@@ -1,6 +1,6 @@
 ---
 title:  "android运行机制"
-subtitle: "android客户端测试"
+tags: [android客户端测试]
 date:   2018-10-29 21:36
 categories: [Android]
 ---
