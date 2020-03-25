@@ -5,6 +5,7 @@ subtitle: "sqli-labs"
 date:   2020-03-24 16：43
 categories: [pentest]
 ---
+<!-- more -->
 mysql注入语句
 
 联合查询
