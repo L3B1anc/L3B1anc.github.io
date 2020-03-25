@@ -4,7 +4,7 @@ subtitle: "android客户端测试"
 date:   2018-10-29 21:36
 categories: [Android]
 ---
-
+<!-- more -->
 # 安卓运行机制
 
 按照我的理解以及查到的资料，android四层：Linux内核层，系统运行库层，应用框架层，应用层
