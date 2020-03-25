@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "信息收集list"
-subtitle: "web渗透"
 date:   2019-04-09 21:36
 categories: [pentest]
+tags:web渗透
 ---
 <!-- more -->
 # list
