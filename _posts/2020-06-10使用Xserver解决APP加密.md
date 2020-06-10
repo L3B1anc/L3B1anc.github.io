@@ -36,6 +36,8 @@ tags: android渗透
 
 ~~选择app包名，点上，就这，有手就行。~~
 
+
+
 ![image-20200610161254749](https://raw.githubusercontent.com/L3B1anc/L3B1anc.github.io/master/_posts/使用Xserver解决APP加密.assets/image-20200610161254749.png)
 
 xserver上面也写的很清楚了，hook到app后需要用adb forward转发一下8000端口，不得不说界面实在太丑了。
