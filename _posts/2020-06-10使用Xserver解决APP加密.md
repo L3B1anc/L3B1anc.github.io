@@ -16,7 +16,7 @@ tags: android渗透
 >
 > 偷大佬的图
 >
-> ![image-20200610154910275](使用Xserver解决APP加密.assets/image-20200610154910275.png)
+> ![image-20200610154910275](https://raw.githubusercontent.com/L3B1anc/L3B1anc.github.io/master/_posts/使用Xserver解决APP加密.assets/image-20200610154910275.png)
 
 ## 1. 找到加解密方法
 
@@ -24,11 +24,11 @@ tags: android渗透
 
 我们使用jadx打开脱壳后的dex文件，找到加解密模块。
 
-![image-20200610154042455](使用Xserver解决APP加密.assets/image-20200610154042455.png)
+![image-20200610154042455](https://raw.githubusercontent.com/L3B1anc/L3B1anc.github.io/master/_posts/使用Xserver解决APP加密.assets/image-20200610154042455.png)
 
 对不起，我错了，下次一定
 
-![image-20200610155828753](使用Xserver解决APP加密.assets/image-20200610155828753.png)
+![image-20200610155828753](https://raw.githubusercontent.com/L3B1anc/L3B1anc.github.io/master/_posts/使用Xserver解决APP加密.assets/image-20200610155828753.png)
 
 ## 2.利用xserver hook到app
 
@@ -36,39 +36,39 @@ tags: android渗透
 
 ~~选择app包名，点上，就这，有手就行。~~
 
-![image-20200610161254749](使用Xserver解决APP加密.assets/image-20200610161254749.png)
+![image-20200610161254749](https://raw.githubusercontent.com/L3B1anc/L3B1anc.github.io/master/_posts/使用Xserver解决APP加密.assets/image-20200610161254749.png)
 
 xserver上面也写的很清楚了，hook到app后需要用adb forward转发一下8000端口，不得不说界面实在太丑了。
 
 ```adb forward tcp:8000 tcp:8000```
 
-![image-20200610160507766](使用Xserver解决APP加密.assets/image-20200610160507766.png)
+![image-20200610160507766](https://raw.githubusercontent.com/L3B1anc/L3B1anc.github.io/master/_posts/使用Xserver解决APP加密.assets/image-20200610160507766.png)
 
 begin后点击load all methods 就会把你填入的包名下的所有方法打印出来，然后钩上想要hook的方法，接着去app里面操作等着客户端调用到这几个hook的方法。
 
-![image-20200610161559566](使用Xserver解决APP加密.assets/image-20200610161559566.png)
+![image-20200610161559566](https://raw.githubusercontent.com/L3B1anc/L3B1anc.github.io/master/_posts/使用Xserver解决APP加密.assets/image-20200610161559566.png)
 
 xserver会自行把hook的方法的堆栈信息打印出来。
 
-![image-20200610162311626](使用Xserver解决APP加密.assets/image-20200610162311626.png)
+![image-20200610162311626](https://raw.githubusercontent.com/L3B1anc/L3B1anc.github.io/master/_posts/使用Xserver解决APP加密.assets/image-20200610162311626.png)
 
 ## 3. xserver打印信息传到burp上
 
 接着打开burp，开启远程监听。
 
-![image-20200610162413615](使用Xserver解决APP加密.assets/image-20200610162413615.png)
+![image-20200610162413615](https://raw.githubusercontent.com/L3B1anc/L3B1anc.github.io/master/_posts/使用Xserver解决APP加密.assets/image-20200610162413615.png)
 
 在xserver 选择想要hook的方法
 
-![image-20200610162735720](使用Xserver解决APP加密.assets/image-20200610162735720.png)
+![image-20200610162735720](https://raw.githubusercontent.com/L3B1anc/L3B1anc.github.io/master/_posts/使用Xserver解决APP加密.assets/image-20200610162735720.png)
 
-![image-20200610162909701](使用Xserver解决APP加密.assets/image-20200610162909701.png)
+![image-20200610162909701](https://raw.githubusercontent.com/L3B1anc/L3B1anc.github.io/master/_posts/使用Xserver解决APP加密.assets/image-20200610162909701.png)
 
 接着直接打开burp，抓包就行了，xserver的每个方法有两个包，request包是传入的参数，response包是return值
 
 比如我现在hook了解密方法，那么传入的应该是密文，传出的就是明文了。
 
-![image-20200610163830715](使用Xserver解决APP加密.assets/image-20200610163830715.png)
+![image-20200610163830715](https://raw.githubusercontent.com/L3B1anc/L3B1anc.github.io/master/_posts/使用Xserver解决APP加密.assets/image-20200610163830715.png)
 
 ---
 
