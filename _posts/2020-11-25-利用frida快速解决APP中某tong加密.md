@@ -7,7 +7,7 @@ tags: frida
 ---
 # 利用frida快速解决APP中某tong加密
 
-利用frida快速解决APP中某tong加密
+首发https://mp.weixin.qq.com/s/1n1ZhdY2uA9LcK2Tw7gXoQ
 <!-- more -->
 
 > 目前项目当中，遇到了客户提供的加固app使用了某tong的加解密，以前常用的xserver(https://github.com/monkeylord/XServer)对于这种加解密无法hook到传入传出了，大佬最近996也没空给我改bug了，没办法用了，最后使用了l总的HTTPDecrypt(https://github.com/lyxhh/lxhToolHTTPDecrypt/tree/master/HTTPDecrypt),也学习了一下httpdecrypt的思路，最后自行编写frida脚本快速解决app中的加密问题。
